@@ -103,8 +103,9 @@ class GCM(object):
 
         if time_to_live:
             payload['time_to_live'] = time_to_live
-            if collapse_key is None:
-                raise GCMNoCollapseKeyException("collapse_key is required when time_to_live is provided")
+            # no longer true : https://plus.google.com/u/0/104524825852741167674/posts/AEpCusdNZY9
+            # if collapse_key is None:
+            #     raise GCMNoCollapseKeyException("collapse_key is required when time_to_live is provided")
 
         if collapse_key:
             payload['collapse_key'] = collapse_key

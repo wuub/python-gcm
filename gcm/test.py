@@ -63,8 +63,10 @@ class GCMTest(unittest.TestCase):
             self.assertIn(arg, payload)
 
     def test_require_collapse_key(self):
-        with self.assertRaises(GCMNoCollapseKeyException):
-            self.gcm.construct_payload(registration_ids='1234', data=self.data, time_to_live=3600)
+        # no longer true: https://plus.google.com/u/0/104524825852741167674/posts/AEpCusdNZY9
+        # with self.assertRaises(GCMNoCollapseKeyException):
+        #     self.gcm.construct_payload(registration_ids='1234', data=self.data, time_to_live=3600)
+        pass
 
     def test_json_payload(self):
         reg_ids = ['12', '145', '56']
